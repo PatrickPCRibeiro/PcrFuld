@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    use HasFactory;protected $fillable = [
+    use HasFactory;
+    
+    protected $fillable = [
     'id',
     'name',
     'category_id'
@@ -15,9 +17,21 @@ class Category extends Model
 
     protected $table = 'categories';
 
-    public function product()
-    {
+    protected $keyType = 'int';
+    protected $primaryKey = 'id';
+    public $incrementing = true;
+
+
+    public function product() {
         return $this->hasMany(Product::class);
+    }
+
+    public function children() {
+        return $this->hasMany(Category::class, 'category_id', 'id');
+    }
+
+    public function father() {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
 
