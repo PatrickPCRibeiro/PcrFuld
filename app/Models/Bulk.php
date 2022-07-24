@@ -7,26 +7,31 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bulk extends Model
 {
-    use HasFactory; protected $fillable = [
-    'product_id',
-    'bulk_slug',
-    'quantity',
-    'divide_or_multiply'
+    use HasFactory;
 
-];
+    protected $fillable = [
+        'slug',
+        'name'
+    ];
 
-    protected $table = 'alternatives_units';
-    protected $keyType = 'int';
-    //protected $primaryKey = 'id';
-    public $incrementing = true;
-
-    public function alternativeunit()
+    /**
+     * @param array $with
+     */
+    public function setWith(array $with): void
     {
-        return $this->belongsTo(AlternativeUnit::class);
+        $this->with = $with;
     }
 
-    public function bulk()
-    {
-        return $this->belongsTo(Bulk::class);
-    }
+    // para proteger a tabela//
+    protected $table = 'bulks';
+
+    // definindo que a chave primária é o campo slug
+    protected $primaryKey = 'slug';
+
+    // definindo que o tipo da chave primária é uma string
+    protected $keyType = 'string';
+
+    // definindo que o laravel não deve incrementar automaticamente
+    public $incrementing = false;
+
 }
