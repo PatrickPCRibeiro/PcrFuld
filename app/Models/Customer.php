@@ -23,11 +23,18 @@ class Customer extends Model
 
     ];
 
-    protected $table = 'Customers';
+    protected $table = 'customers';
+    protected $primaryKey = 'id';
+    protected $keyType = 'int';
+    public $incrementing = true;
 
-    public function order ()
+    public function order()
     {
         return $this->hasMany(Order::class);
     }
 
+    public function userHasCustomers()
+    {
+        return $this->hasMany(UserHasCustomer::class);
+    }
 }
