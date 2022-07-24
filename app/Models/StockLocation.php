@@ -10,10 +10,17 @@ class StockLocation extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'description',
 
 
     ];
+
+    protected $table = 'stock_locations';
+    protected $primaryKey = 'id';
+    protected $keyType = 'int';    
+    public $incrementing = true;
+
 
     public function stock()
     {
