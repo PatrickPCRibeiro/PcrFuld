@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class State extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'id',
+        'uf',
+        'description',
+        'country_id'
+    ];
+
+    protected $table = 'states';
+
+    protected $primaryKey = 'id';
+    protected $keyType = 'int';
+    public $incrementing = true;
 }
