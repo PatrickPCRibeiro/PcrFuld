@@ -28,29 +28,24 @@ class Product extends Model
 
     protected $table = 'products';
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
-
-    public function bulks()
-    {
-        return $this->belongsTo(Bulk::class);
-    }
-
-    public function alternativeunit()
-    {
-        return $this->hasMany(AlternativeUnit::class);
-    }
-
-    public function items()
-    {
+    public function item() {
         return $this->hasMany(OrderItem::class);
     }
 
-    public function stocks()
-    {
+    public function stock() {
         return $this->hasMany(Stock::class);
+    }
+
+    public function alternativeUnit() {
+        return $this->hasMany(AlternativeUnit::class);
+    }
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function bulk() {
+        return $this->belongsTo(Bulk::class);
     }
 
 }
