@@ -11,7 +11,7 @@ class OrderItem extends Model
 
     protected $fillable = [
         'seq',
-        'orders_id',
+        'order_id',
         'product_id',
         'quantity',
         'value',
@@ -21,8 +21,8 @@ class OrderItem extends Model
     ];
 
     protected $table = 'orders_items';
-    protected $keyType = 'int';
     protected $primaryKey = 'seq';
+    protected $keyType = 'int';    
     public $incrementing = true;
 
     public function order()
