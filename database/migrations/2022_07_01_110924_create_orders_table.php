@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('number');
             $table->unsignedInteger('user_id');
-            $table->date('data');
+            $table->date('date');
             $table->string('type',1);
             $table->string('status',1);
             $table->unsignedInteger('customers_id');
