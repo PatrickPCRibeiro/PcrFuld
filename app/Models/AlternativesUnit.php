@@ -19,16 +19,13 @@ class AlternativesUnit extends Model
 
     protected $table = 'alternatives_units';
     protected $keyType = 'int';
-    //protected $primaryKey = 'id';
     public $incrementing = true;
 
-    public function alternativeunit(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(AlternativeUnit::class);
+    public function bulk() {
+        return $this->belongsTo(Bulk::class);
     }
 
-    public function bulk(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(Bulk::class);
+    public function product() {
+        return $this->belongsTo(Product::class);
     }
 }
