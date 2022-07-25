@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Alternatives_units
+/* não precisa ter rota própria, em outras tabelas seram adicionadas mais rotas
+para acessar os campos de orders_items
+
+Route::get('alternatives_units',[AlternativeUnitController::class,'index']);
+Route::get('alternatives_units/{??}',[AlternativeUnitController::class,'show']);
+Route::post('alternatives_units',[AlternativeUnitController::class,'store']);
+Route::put('alternatives_units/{??}',[AlternativeUnitController::class,'update']);
+Route::delete('alternatives_units/{??}',[AlternativeUnitController::class,'delete']);
+*/
