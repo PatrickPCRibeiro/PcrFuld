@@ -33,3 +33,4 @@ Route::get('bulks/{slug}', [BulkController::class,'show']);
 Route::post('bulks', [BulkController::class,'store']);
 Route::put('bulks/{slug}',[BulkController::class,'update']);
 Route::delete('bulks/{slug}',[BulkController::class,'delete']);
+
