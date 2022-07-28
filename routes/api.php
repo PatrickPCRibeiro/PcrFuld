@@ -2,11 +2,19 @@
 
 use App\Http\Controllers\Bulk;
 use App\Http\Controllers\BulkController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StateController;
+use App\Http\Controllers\StockController;
+use App\Http\Controllers\StockLocationController;
+use App\Http\Controllers\TypePaymentController;
+use App\Http\Controllers\UserController;
+use App\Models\StockLocation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -64,11 +72,11 @@ para acessar os campos de AlternativesUnits
 */
 
 //Products
-Route::get('products',[ProductsController::class,'index']);
-Route::get('products/{id}',[ProductsController::class,'show']);
-Route::post('products',[ProductsController::class,'store']);
-Route::put('products/{id}',[ProductsController::class,'update']);
-Route::delete('products/{id}',[ProductsController::class,'delete']);
+Route::get('products',[ProductController::class,'index']);
+Route::get('products/{id}',[ProductController::class,'show']);
+Route::post('products',[ProductController::class,'store']);
+Route::put('products/{id}',[ProductController::class,'update']);
+Route::delete('products/{id}',[ProductController::class,'delete']);
 //Route::delete('products/{id}/alternative_units',[ProductsController::class,'ListAlternativeUnits']);
 
 //StocksLocations
