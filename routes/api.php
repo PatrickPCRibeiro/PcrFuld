@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\Bulk;
 use App\Http\Controllers\BulkController;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\DistrictController;
+use App\Http\Controllers\StateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -110,32 +114,32 @@ Route::delete('orders/{id}',[OrderController::class,'delete']);
 
 
 //districts
-Route::get('districts',[OrderController::class,'index']);
-Route::get('districts/{id}',[OrderController::class,'show']);
-Route::post('districts',[OrderController::class,'store']);
-Route::put('districts/{id}',[OrderController::class,'update']);
-Route::delete('districts/{id}',[OrderController::class,'delete']);
+Route::get('districts',[DistrictController::class,'index']);
+Route::get('districts/{id}',[DistrictController::class,'show']);
+Route::post('districts',[DistrictController::class,'store']);
+Route::put('districts/{id}',[DistrictController::class,'update']);
+Route::delete('districts/{id}',[DistrictController::class,'delete']);
 
 //cities
-Route::get('cities',[OrderController::class,'index']);
-Route::get('cities/{id}',[OrderController::class,'show']);
-Route::post('cities',[OrderController::class,'store']);
-Route::put('cities/{id}',[OrderController::class,'update']);
-Route::delete('cities/{id}',[OrderController::class,'delete']);
+Route::get('cities',[CityController::class,'index']);
+Route::get('cities/{id}',[CityController::class,'show']);
+Route::post('cities',[CityController::class,'store']);
+Route::put('cities/{id}',[CityController::class,'update']);
+Route::delete('cities/{id}',[CityController::class,'delete']);
 
 //countries
-Route::get('countries',[OrderController::class,'index']);
-Route::get('countries/{id}',[OrderController::class,'show']);
-Route::post('countries',[OrderController::class,'store']);
-Route::put('countries/{id}',[OrderController::class,'update']);
-Route::delete('countries/{id}',[OrderController::class,'delete']);
+Route::get('countries',[CountryController::class,'index']);
+Route::get('countries/{id}',[CountryController::class,'show']);
+Route::post('countries',[CountryController::class,'store']);
+Route::put('countries/{id}',[CountryController::class,'update']);
+Route::delete('countries/{id}',[CountryController::class,'delete']);
 
 //states
-Route::get('states',[OrderController::class,'index']);
-Route::get('states/{id}',[OrderController::class,'show']);
-Route::post('states',[OrderController::class,'store']);
-Route::put('states/{id}',[OrderController::class,'update']);
-Route::delete('states/{id}',[OrderController::class,'delete']);
+Route::get('states',[StateController::class,'index']);
+Route::get('states/{id}',[StateController::class,'show']);
+Route::post('states',[StateController::class,'store']);
+Route::put('states/{id}',[StateController::class,'update']);
+Route::delete('states/{id}',[StateController::class,'delete']);
 
 
 
